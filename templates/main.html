@@ -1,0 +1,18 @@
+
+{% if pending %}
+    pendiente
+{% else %}
+    <form>
+        {{ signature_integrity }}
+        <script
+            src="https://checkout.wompi.co/widget.js"
+            data-render="button"
+            data-public-key="{{ wompi_public_key }}"
+            data-currency= "{{ coin_type }}"
+            data-amount-in-cents="{{ ammount_in_cents }}"
+            data-reference="{{ reference }}"
+            data-signature:integrity="{{ signature_integrity }}"
+            >
+        </script>
+    </form>
+{% endif %}
